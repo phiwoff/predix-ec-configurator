@@ -1,0 +1,9 @@
+---
+applications:
+  - name:      <ecagent_gateway_name>
+    memory:    512M
+    instances: 1
+    command:   bash ./ec-gateway.sh
+    no-start:  true
+    no-route:  true
+    buildpack: https://github.com/cloudfoundry/binary-buildpack.git

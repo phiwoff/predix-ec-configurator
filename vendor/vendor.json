@@ -1,0 +1,56 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "HeAOIQS+TI75+Afm0qgKXdg+37I=",
+			"path": "github.com/PuerkitoBio/goquery",
+			"revision": "ce645ea5e67a713599b7415f21f0786451fa9554",
+			"revisionTime": "2017-08-16T13:38:31Z"
+		},
+		{
+			"checksumSHA1": "o9qdJVSV+rXgZO8ltj3sk3erdPc=",
+			"path": "github.com/cavaliercoder/grab",
+			"revision": "1fa46fa9806896245c0a3707187c8b5bbd5c0701",
+			"revisionTime": "2017-08-12T02:56:47Z"
+		},
+		{
+			"checksumSHA1": "Fn9vSXybIuu8XLq+e5DitvamjK4=",
+			"path": "github.com/cloudfoundry-community/go-cfclient",
+			"revision": "983f0bf32d53fef86f65c095ecb693acf8a8d95e",
+			"revisionTime": "2017-08-23T22:43:56Z"
+		},
+		{
+			"checksumSHA1": "HEEx7LDDtZ8vwZauJtzdTc/uDa8=",
+			"path": "github.com/gorilla/mux",
+			"revision": "3f19343c7d9ce75569b952758bd236af94956061",
+			"revisionTime": "2017-09-22T20:54:14Z"
+		},
+		{
+			"checksumSHA1": "q4+FQZRU9VNpr1dcdn+5MP3Xg4k=",
+			"path": "github.com/mholt/archiver",
+			"revision": "3c2e5cf1f43ddea9711d0f0a3d30d3dfeb27f48b",
+			"revisionTime": "2017-09-22T20:54:32Z"
+		},
+		{
+			"checksumSHA1": "rJab1YdNhQooDiBWNnt7TLWPyBU=",
+			"path": "github.com/pkg/errors",
+			"revision": "f15c970de5b76fac0b59abb32d62c17cc7bed265",
+			"revisionTime": "2017-10-18T19:55:50Z"
+		},
+		{
+			"checksumSHA1": "OZpv1QDSDG23bzSk/7auPQRB2Qg=",
+			"path": "github.com/russross/blackfriday",
+			"revision": "4048872b16cc0fc2c5fd9eacf0ed2c2fedaa0c8c",
+			"revisionTime": "2017-07-28T17:53:26Z"
+		},
+		{
+			"checksumSHA1": "XoUO4WpqMYyhT8Qb1BpOE1HdN8Q=",
+			"path": "github.com/sourcegraph/syntaxhighlight",
+			"revision": "bd320f5d308e1a3c4314c678d8227a0d72574ae7",
+			"revisionTime": "2017-05-31T22:18:38Z"
+		}
+		
+	],
+	"rootPath": "github.com/indaco/predix-ec-configurator"
+}

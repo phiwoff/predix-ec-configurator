@@ -1,0 +1,311 @@
+{{ define "yield" }}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Scenario 2</h2>
+        <form class="form-horizontal" id="form-setup" name="form-setup" action="/scenario-2" method="POST">
+            <h5>
+                <strong>Predix Account</strong>&nbsp;
+                <span style="color: cornflowerblue">[Logged In as:
+                    <u>{{ .Yield.Account.Username }}</u>]</span>
+            </h5>
+            <br/>
+            <!-- ****** -->
+            <!-- Predix -->
+            <!-- ****** -->
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-4">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>CF Org</strong>
+                        </span>
+                        <select id="predixOrgs" name="predixOrgs" class="form-control">
+                            <option></option>
+                            {{range .Yield.Orgs}}
+                            <option value="{{.Guid}}">{{.Name}}</option>
+                            {{ end }}
+                        </select>
+                        <span class="help-block">Select a CF Organization.</span>
+
+                    </div>
+                </div>
+
+                <!--Second column-->
+                <div class="col-md-4">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>CF Space</strong>
+                        </span>
+                        <select id="predixOrgSpaces" name="predixOrgSpaces" class="form-control">
+                            <option></option>
+                        </select>
+                        <span class="help-block">Select a CF Space.</span>
+                    </div>
+                </div>
+
+                <!--Third column-->
+                <div class="col-md-4">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>Application Name</strong>
+                        </span>
+                        <select id="predixSpaceApps" name="predixSpaceApps" class="form-control">
+                            <option></option>
+                        </select>
+                        <span class="help-block">Select the app binded to UAA and Enterprise-Connect.</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- *** -->
+            <!-- UAA -->
+            <!-- *** -->
+            <h5>
+                <strong>UAA Details</strong>
+                <span id="uaaServiceName" name="uaaServiceName" style="color: cornflowerblue"></span>
+            </h5>
+            <br/>
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>UAA Zone ID</strong>
+                        </span>
+                        <input id="uaaZoneID" name="uaaZoneID" type="text" class="form-control input-md" disabled required aria-required="true" />
+                        <span class="help-block">Zone ID for your Predix UAA service instance.</span>
+                    </div>
+                </div>
+
+                <!--Second column-->
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>UAA Service URI</strong>
+                        </span>
+                        <input id="uaaServiceURI" name="uaaServiceURI" type="text" class="form-control input-md" disabled required aria-required="true" />
+                        <span class="help-block">Service URI your Predix UAA service instance.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <i class="fa fa-user prefix"></i>
+                        <input id="uaaClient" name="uaaClient" type="text" class="form-control input-md" required aria-required="true" />
+                        <span class="help-block">UAA Client assigned to Enterprise Connect.</span>
+                    </div>
+                </div>
+
+                <!--Second column-->
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        <input id="uaaClientSecret" name="uaaClientSecret" type="text" class="form-control input-md" required aria-required="true" />
+                        <span class="help-block">UAA Client Secret assigned to Enterprise Connect.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ****************** -->
+            <!-- ENTERPRISE CONNECT -->
+            <!-- ****************** -->
+            <br/>
+            <h5>
+                <strong>EC Details</strong>
+                <span id="ecServiceName" name="ecServiceName" style="color: cornflowerblue"></span>
+            </h5>
+            <br/>
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-4">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>EC Zone ID</strong>
+                        </span>
+                        <input id="ecZoneID" name="ecZoneID" type="text" class="form-control input-md" disabled required aria-required="true" />
+                        <span class="help-block">Zone ID for Enterprise Connect service instance.</span>
+                    </div>
+                </div>
+
+                <!--Second column-->
+                <div class="col-md-8">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>EC Service URI</strong>
+                        </span>
+                        <input id="ecServiceURI" name="ecServiceURI" type="text" class="form-control input-md" disabled required aria-required="true" />
+                        <span class="help-block">EC Service URI.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-10">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>EC Admin Token</strong>
+                        </span>
+                        <input type="text" id="ecAdmToken" name="ecAdmToken" class="form-control input-md" disabled required aria-required="true" />
+                        <span class="help-block">EC Admin Token will be reported here.</span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>EC IDs</strong>
+                        </span>
+                        <input type="text" id="ecIDS" name="ecIDS" class="form-control input-md" disabled required aria-required="true" />
+                        <span class="help-block">EC IDs.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>EC Gateway Name</strong>
+                        </span>
+                        <input type="text" id="ecGatewayName" name="ecGatewayName" class="form-control input-md" required aria-required="true" />
+                        <span class="help-block">Name for EC Agent Gateway. It will be pushed on Predix.io.</span>
+                    </div>
+                </div>
+                <!--First column-->
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>EC Server Name</strong>
+                        </span>
+                        <input type="text" id="ecServerName" name="ecServerName" class="form-control input-md" required aria-required="true" />
+                        <span class="help-block">Name for EC Agent Server. It will be pushed on Predix.io.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ******************* -->
+            <!-- PREDIX DATA SOURCES -->
+            <!-- ******************* -->
+            <br/>
+            <h5>
+                <strong>Predix Data Source</strong>
+            </h5>
+            <br/>
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <span class="help-block">Predix Data Source to make accessible out of Predix Cloud.</span>
+                        <select id="predixDataSource" name="predixDataSource" class="form-control">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!--Second column-->
+                <div class="col-md-8">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>Hostname</strong>
+                        </span>
+                        <input id="resourceHost" name="resourceHost" type="text" class="form-control input-md" disabled required aria-required="true" />
+                    </div>
+                </div>
+                <!--Second column-->
+                <div class="col-md-4">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>Port</strong>
+                        </span>
+                        <input id="resourcePort" name="resourcePort" type="text" class="form-control input-md" disabled required aria-required="true" />
+                    </div>
+                </div>
+            </div>
+            <!-- ******************* -->
+            <!-- ON-PREMISE SYSTEM -->
+            <!-- ******************* -->
+            <br/>
+            <h5>
+                <strong>Local System</strong>
+            </h5>
+            <br/>
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-3">
+                    <div class="md-form">
+                        <span class="help-block">Operating System</span>
+                        <select id="onPremiseOS" name="onPremiseOS" class="form-control">
+                            <option value="ecagent_linux_sys">Linux</option>
+                            <option value="ecagent_arm_sys">Arm</option>
+                            <option value="ecagent_darwin_sys">Darwin</option>
+                            <option value="ecagent_windows_sys.exe">Windows</option>
+                        </select>
+                        <span class="help-block">OS for your local machine.</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="md-form">
+                        <span class="help-block"><strong>Local Port</strong></span>
+                        <input id="localPort" name="localPort" type="number" placeholder="7990" class="form-control input-md" required aria-required="true" />
+                        <span class="help-block">Specify a local port# to be used as main port to reach the service.</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>Debug Mode</strong>
+                        </span>
+                        <select id="isDebug" name="isDebug" class="form-control">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                        <span class="help-block">Enable debug mode.</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="md-form">
+                        <span class="help-block"><strong>Healthcheck Port</strong></span>
+                        <input id="healthcheckPort" name="healthcheckPort" type="number" placeholder="8085" class="form-control input-md" required aria-required="true" />
+                        <span class="help-block">Specify a port# to turn on the Healthcheck API (agent_uri/health).</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ******************* -->
+            <!-- Networking RESOURCE -->
+            <!-- ******************* -->
+            <br/>
+            <h5>
+                <strong>Networking</strong>
+            </h5>
+            <br/>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form">
+                        <span class="help-block">
+                            <strong>Proxy URL</strong>
+                        </span>
+                        <input id="proxyURL" name="proxyURL" type="text" class="form-control input-md" placeholder="http://myproxy:port" />
+                        <span class="help-block">Here the url if you are behing a proxy. Note, EC does not support authentication over proxy. Be sure
+                            to use an application proxy without authentication.</span>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <!-- Form Buttons -->
+            <div class="row">
+                <div class="text-center">
+                    <a href="/start" class="btn btn-default">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Generate All</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="/public/js/scenario-2.js"></script> {{ end }}

@@ -1,0 +1,12 @@
+{
+    "predix": {
+        "domain": ".run.aws-usw02-pr.ice.predix.io",
+        "api": "https://api.system.aws-usw02-pr.ice.predix.io",
+        "username": "<your-predix-username>",
+        "password": "<your-predix-password>"
+    },
+    "webserver": {
+        "host": "localhost",
+        "port": 9000
+    }
+}

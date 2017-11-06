@@ -1,0 +1,61 @@
+{{ define "page" }}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Predix-EC-Configurator</title>
+        <link rel="icon" href="/public/img/favicon.png"/>
+
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap core CSS -->
+        <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="/public/css/mdb.min.css" rel="stylesheet">
+        <!-- Your custom styles (optional) -->
+        <link href="/public/css/style.css" rel="stylesheet">
+        <!-- JQuery & Bootstrap JS -->
+        <script type="text/javascript" src="/public/js/jquery-3.2.1.min.js"></script>
+    </head>
+
+    <body>
+        {{ template "navbar" }}
+        <br/>
+        <br/>
+        <div class="container">
+
+            {{ template "banner" }} 
+            
+            <div id="successMessage" name="successMessage" class="alert alert-success" style="display:none;"></div>
+            <div id="warningMessage" name="warningMessage" class="alert alert-warning" style="display:none;"></div>
+            <div id="errorMessage" name="errorMessage" class="alert alert-danger" style="display:none;"></div>
+
+            <hr class="my-4"> 
+            
+            {{ if "yield" }} 
+                {{ template "yield" .}} 
+            {{ end }}
+
+            <hr class="my-4">
+        </div>
+        <br/> 
+        
+        {{ template "footer" }}
+
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="/public/js/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="/public/js/mdb.min.js"></script>
+        <script type="text/javascript" src="/public/js/jquery.validate.min.js"></script>
+        <script type="text/javascript">
+            $("form-setup").validate();
+        </script>
+    </body>
+
+</html>
+{{ end }}

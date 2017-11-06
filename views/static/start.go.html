@@ -1,0 +1,158 @@
+{{ define "yield" }}
+<div class="row">
+    <div class="col-md-12">
+        <p>Here is where you decide which scenario for EC to setup. Click on relative "Read more..." link to know see how EC
+            works for that scenario and what you need as pre-requisisted to get it works.</p>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="view hm-zoom">
+                <!--Card image-->
+                <img class="img-fluid" src="/public/img/EC_1.png" alt="Card image cap">
+                <div class="mask flex-center" onclick="window.location='/scenario-1'" style="cursor:pointer;">
+                    <p class="white-text"></p>
+                </div>
+            </div>
+            <!--Card content-->
+            <div class="card-body">
+                <!--Title-->
+                <h4 class="card-title">Scenario 1</h4>
+                <!--Text-->
+                <p class="card-text">Configure and use Enterprise Connect to connect an on-premise data sources from Predix Cloud.</p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#scenario-1-description" aria-expanded="false"
+                    aria-controls="scenario-1-description">
+                    Read More...
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="view hm-zoom">
+                <!--Card image-->
+                <img class="img-fluid" src="/public/img/EC_2.png" alt="Card image cap">
+                <div class="mask flex-center" onclick="window.location='/scenario-2'" style="cursor:pointer;">
+                    <p class="white-text"></p>
+                </div>
+            </div>
+            <br/>
+            <!--Card content-->
+            <div class="card-body">
+                <!--Title-->
+                <h4 class="card-title">Scenario 2</h4>
+                <!--Text-->
+                <p class="card-text">Configure and use Enterprise Connect to access Predix data source from on-premise systems.</p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#scenario-2-description" aria-expanded="false"
+                    aria-controls="scenario-2-description">
+                    Read More...
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-md-12">
+        <div id="scenario-1-description" name="scenario-1-description" class="panel panel-primary collapse">
+            <hr class="my-4">
+            <div class="panel-heading">
+                <h3 class="panel-title">Scenario 1 - Connect on-premise data sources to Predix cloud.</h3>
+            </div>
+            <div class="panel-body">
+                <p>Selecting this scenario you are going to configure and use Enterprise Connect to connect on-premise data
+                    sources to Predix Cloud.
+                </p>
+                <p>
+                    <b>What Do you need for it?</b>
+                    <br>
+                    <ul>
+                        <li>Push a sample application to Predix</li>
+                        <li>Create the UAA service instance </li>
+                        <li>Bind the sample application to the UAA service instance.</li>
+                        <li>Create an instance of the Enterprise Connect service.</li>
+                        <li>Create an OAuth2 client to setup access to EC service authenticated using UAA</li>
+                        <li>Update the OAuth2 client to add service specific scopes or authorities.</li>
+                        <li>Bind the application to the service instance.</li>
+                    </ul>
+                </p>
+                <br/>
+                <p>
+                    Read the <a href="https://docs.predix.io/en-US/content/service/edge_software_and_services/enterprise_connect/getting-started-with-enterprise-connect" target="_blank">documentation</a>
+                     on Predix.io to create and configure the Enteprise Connect service.
+                </p>
+                <br/>
+                <p>
+                    <mark>
+                        <b>Note:EC-Configurator requires a sample app binded to the predix services in order to retrieve information
+                            from VCAPS and automate the configuration.</b>
+                    </mark>
+                </p>
+                <p>Below a picture to highlight the dataflow and how EC components are used for this scenario.</p>
+                <img src="/public/img/EC-Scenario_1.png" alt="Scenario 1 - Connect on-premise data sources to Predix cloud" class="img-fluid center-block">
+                <br/>
+                <p>
+                    <i>Futher information are available reading the official documentation page on
+                        <a href="https://docs.predix.io/en-US/content/service/edge_software_and_services/enterprise_connect/getting-started-with-enterprise-connect">Predix.io</a>.
+                    </i>
+                </p>
+            </div>
+            <div class="panel-footer">
+                <a href="/scenario-1" class="btn btn-info">Use it!</a>
+            </div>
+        </div>
+        <div id="scenario-2-description" name="scenario-2-description" class="panel panel-primary collapse">
+            <hr class="my-4">
+            <div class="panel-heading">
+                <h3 class="panel-title">Scenario 2 - Connect Predix data sources to on-premise systems</h3>
+            </div>
+            <div class="panel-body">
+                <p>Selecting this scenario you are going to configure and use Enterprise Connect to connect Predix data sources
+                    to on-premise systems.
+                </p>
+                <p>
+                    <b>What Do you need for it?</b>
+                    <br>
+                    <ul>
+                        <li>Push a sample application to Predix</li>
+                        <li>Create the UAA service instance </li>
+                        <li>Bind the sample application to the UAA service instance.</li>
+                        <li>Create an instance of the Enterprise Connect service.</li>
+                        <li>Create an OAuth2 client to setup access to EC service authenticated using UAA</li>
+                        <li>Update the OAuth2 client to add service specific scopes or authorities.</li>
+                        <li>Bind the sample application to the service instance.</li>
+                        <li>Create the CF Datasource service instance (PostgreSQL and/or RabbitMQ)</li>
+                        <li>Bind the sample application to the service instance.</li>
+                    </ul>
+                </p>
+                <br/>
+                <p>
+                    Read the <a href="https://docs.predix.io/en-US/content/service/edge_software_and_services/enterprise_connect/getting-started-with-enterprise-connect" target="_blank">documentation</a>
+                     on Predix.io to create and configure the Enteprise Connect service.
+                </p>
+                <br/>
+                <p>
+                    <mark>
+                        <b>Note:EC-Configurator requires a sample app binded to the predix services in order to retrieve information
+                            from VCAPS and automate the configuration.</b>
+                    </mark>
+                </p>
+                <p>Below a picture to highlight the dataflow and how EC components are used for this scenario.</p>
+                <img src="/public/img/EC-Scenario_2.png" alt="Scenario 2 - Connect Predix data sources to on-premise systems" class="img-fluid center-block">
+                <br/>
+                <p>
+                    <i>Futher information are available reading the official documentation page on
+                        <a href="https://docs.predix.io/en-US/content/service/edge_software_and_services/enterprise_connect/getting-started-with-enterprise-connect">Predix.io</a>.
+                    </i>
+                </p>
+            </div>
+            <div class="panel-footer">
+                <a href="/scenario-2" class="btn btn-info">Use it!</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
