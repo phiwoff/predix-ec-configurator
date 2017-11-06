@@ -33,7 +33,7 @@ EC Agent is equipped with three explicit functional modes:
 - **Server mode**: The server has sole access to a target resource, is tasked to transmitting the data flow between the resource and the Gateway.
 - **Gateway mode**: It handles security handshakes, IP filtering, and seeks for the permission from EC service instance by passing on the Client/Server credentials to authorizing requests. Upon authentication, the Gateway performs two-way binding (Client/Server), induces a session, and signifies the requesters for readiness.
 
-A singe binary like EC Agent is used to address both scenarios and needs sevaral parameters to work.
+A single binary like EC Agent is used to address both scenarios and needs several parameters to work.
 
 ### So, what is the end-goal for this app??
 
@@ -41,7 +41,7 @@ This app speed up the configuration of ECAgent script based on your selected sce
 
 - download latest version for EC Agent SDK
 - generate all the scripts you need to setup the scenario
-- strucutre the folders in a reasonable way to be easily used
+- structure the folders in a reasonable way to be easily used
 - create a step-by-step tutorial to guide you to the goal.
 
 - - -
@@ -54,10 +54,10 @@ Below what you need to use Enterprise Connect on Predix.io and what is needed on
 
 Be sure to have the following software installed and configured on your machine:
 
-- A working internet connection: 
+- A working internet connection:
   - it is used to download the latest release for ECAgent-SDK from the GitHub repository
   - if you are behind a proxy be sure to setup `HTTP_PROXY` and `HTTPS_PROXY`environmental variables on your machine
-- [Git](https://git-scm.com/): Distributed version control system 
+- [Git](https://git-scm.com/): Distributed version control system
 - Go (v.1.9.x)
   - Download and install [Go](https://golang.org/doc/install) on your operating system and configure your `GOPATH` environment
 - GoVendor: install it to manage dependencies, `go get -u github.com/kardianos/govendor`
@@ -93,8 +93,8 @@ Edit `configs.json` file with your Predix.io credentials:
 "predix": {
     "domain": ".run.aws-usw02-pr.ice.predix.io",
     "api": "https://api.system.aws-usw02-pr.ice.predix.io",
-    "username": "<predix.io_username>",
-    "password": "<predix.io_password>"
+    "username": "<your-predix-username>",
+    "password": "<your-predix-password>"
 }
 ...
 ```
