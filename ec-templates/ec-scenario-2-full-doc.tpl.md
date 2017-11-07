@@ -48,7 +48,7 @@ cf enable-diego <ecagent_gateway_name>
 Now it is time to map CF Route to the Gateway app with
 
 ```sh
-cf map-route <ecagent_gateway_name> run.aws-usw02-pr.ice.predix.io -n <ecagent_gateway_name>
+cf map-route <ecagent_gateway_name> run.your.domain.predix.io -n <ecagent_gateway_name>
 ```
 
 and start the EC Agent Gateway
@@ -57,7 +57,7 @@ and start the EC Agent Gateway
 cf start <ecagent_gateway_name>
 ```
 
-Check if it works opening a browser windows at `https://<ecagent_gateway_name>.run.aws-usw02-pr.ice.predix.io/health`
+Check if it works opening a browser windows at `https://<ecagent_gateway_name>.run.your.domain.predix.io/health`
 
 ### 3. EC Agent Server
 
@@ -92,7 +92,7 @@ cf enable-diego <ecagent_server_name>
 Now, it is time to map CF Route to the Gateway app
 
 ```sh
-cf map-route <ecagent_server_name> run.aws-usw02-pr.ice.predix.io -n <ecagent_server_name>
+cf map-route <ecagent_server_name> run.your.domain.predix.io -n <ecagent_server_name>
 ```
 
 and start the EC Agent Server
@@ -101,9 +101,9 @@ and start the EC Agent Server
 cf start <ecagent_server_name>
 ```
 
-Check if it works opening a browser windows at `https://<ecagent_server_name>.run.aws-usw02-pr.ice.predix.io/health`
+Check if it works opening a browser windows at `https://<ecagent_server_name>.run.your.domain.predix.io/health`
 
-**NOTE:** Verify the server appears as "SupperConns" belongs to the gateway: ``https://<ecagent_gateway_name>.run.aws-usw02-pr.ice.predix.io/health` (it may take a minute)
+**NOTE:** Verify the server appears as "SupperConns" belongs to the gateway: ``https://<ecagent_gateway_name>.run.your.domain.predix.io/health` (it may take a minute)
 
 ### 4. EC Agent Client
 

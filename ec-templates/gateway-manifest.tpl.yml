@@ -1,9 +1,10 @@
 ---
 applications:
   - name:      <ecagent_gateway_name>
-    memory:    512M
+    memory: 256M
+    no-route: true
     instances: 1
-    command:   bash ./ec-gateway.sh
-    no-start:  true
-    no-route:  true
+    stack: cflinuxfs2
+    path: .
+    command: bash ./ec.sh
     buildpack: https://github.com/cloudfoundry/binary-buildpack.git
